@@ -338,9 +338,67 @@ main {
 }
 
 .main__sidebar {
-    background-color: yellow;
     grid-column: 5 / span 1;
     grid-row: 2 / span 2;
+}
+
+.main__sidebar__top {
+    padding: 14px 18px;
+    border: 1px #D5D9D9 solid;
+    border-radius: 8px;
+}
+
+.main__sidebar__total {
+    color: #B12704;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.main__sidebar__top span:first-child {
+    color: #565959;
+    font-size: 14px;
+}
+
+.main__sidebar__top span:nth-child(3) {
+    color: #007185;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    padding-top: 4px;
+    padding-bottom: 16px;
+}
+
+.main__sidebar__top span:nth-child(4) {
+    font-size: 14px;
+    color: #0F1111;
+    padding-bottom: 22px;
+    display: block;
+}
+
+.main__sidebar__top span:nth-child(5) {
+    color: #007600;
+    font-size: 18px;
+    display: block;
+    padding-bottom: 18px;
+}
+
+.main__sidebar__top button {
+    display: block;
+    color: #111;
+    text-align: center;
+    width: 190px;
+    height: 27px;
+    border-radius: 2px;
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+.main__sidebar__total_button-1{
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+}
+
+.main__sidebar__top button:last-child {
+    background: linear-gradient(to bottom,#f6c88f,#ed9220);
+    margin-top: 10px;
 }
 
 .main__bought-together {
@@ -404,6 +462,7 @@ main {
     padding: 5px;
     margin-bottom: 10px;
     margin-top: 15px;
+    width: 140px;
 }
 
 .main__bought-together-middle__button-button-2 {
@@ -417,6 +476,7 @@ main {
     color: #111;
     padding: 5px;
     margin-bottom: 15px;
+    width: 140px;
 }
 
 .main__blank_roller {
@@ -424,6 +484,7 @@ main {
     grid-row: 4 / span 1;
     border-top: 1px solid #CCC;
     margin-top: 40px;
+    height: 180px;
 }
 
 .main__blank_roller h2 {
@@ -441,7 +502,7 @@ main {
 
 .main__blank_roller__main-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit , minmax(160px, 1fr));
     width: 100%;
     height: 180px;
 }
@@ -456,6 +517,13 @@ main {
     line-height: 0;
 
 }
+
+@media(max-width: 1250px) {
+    .main__blank_roller-item:last-child {
+        display: none;
+    }
+}
+
 
 .main__blank_spcae_right {
     grid-column: 6 / span 1;
