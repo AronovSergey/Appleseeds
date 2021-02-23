@@ -1,11 +1,9 @@
-const fullName = document.querySelector("#name");
-const email = document.querySelector("#email");
-const age = document.querySelector("#age");
+const form =  document.querySelector("form");
 const button = document.querySelector(".btn");
 
 
 button.addEventListener("click", () => {
-    const response = confirm(`Please verify the data, Name: ${fullName.value}, Email: ${email.value}, Age: ${parseInt(age.value)}`);
+    const response = confirm(`Please verify the data, Name: ${form.name.value}, Email: ${form.email.value}, Age: ${parseInt(form.age.value)}`);
     if(response){
         window.alert("congratulations you successfully sent this form");
     }
