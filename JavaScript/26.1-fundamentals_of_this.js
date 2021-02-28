@@ -52,4 +52,4 @@ document.querySelector(".element").addEventListener(() => {
  console.log(this);
 });
 
-In this case this referring to selected element
+In this case it referring to global object, because it arrow function;
