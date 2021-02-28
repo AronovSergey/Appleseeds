@@ -3,7 +3,7 @@ In your own words what will this point to and why?(Note
 this is the global scope)
 console.log(this);
 
-return { }, Because NodeJS runs your code in a module, and this references the object it creates for your module's exports, 
+In this case it referring to global object.
 
 
 
