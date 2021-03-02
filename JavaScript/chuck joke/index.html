@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #777;
+            font-size: 40px;
+            font-weight: 800px;
+        }
+
+        div {
+            font-size: 25px;
+            font-weight: 700;
+            margin: 15px;
+        }
+
+        button,
+        input {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            background-color: black;
+            width: 300px;
+            height: 40px;
+            border-radius: 16px;
+            outline: none;
+            cursor: pointer;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .single_button {
+            margin-bottom: 50px;
+        }
+
+        select{ 
+            font-size: 20px;
+            font-weight: 700;
+        }
+    </style>
+    <title>Chuck Jokes</title>
+</head>
+<body>
+    <h1>Single Joke</h1>
+    <div class="a-joke_1">Click on the button down below...</div>
+    <button class="single_button">Get me a new one ...</button>
+
+
+    <h1>Joke By Category</h1>
+    <div class="a-joke_2">Click on the button down below...</div>
+    <div class="category_section">
+        <button>animal</button>
+        <button>career</button>
+        <button>celebrity</button>
+        <button>dev</button>
+        <button>explicit</button>
+        <button>fashion</button>
+        <button>food</button>
+        <button>history</button>
+        <button>money</button>
+        <button>movie</button>
+        <button>music</button>
+        <button>political</button>
+        <button>religion</button>
+        <button>science</button>
+        <button>sport</button>
+        <button>travel</button>
+    </div>
+
+
+    <h1>Joke By Category 2</h1>
+    <div class="a-joke_3">Click on the button down below...</div>
+    <form ">
+        <select name="categories" id="categories">
+            <option value="animal">animal</option>
+            <option value="career">career</option>
+            <option value="celebrity">celebrity</option>
+            <option value="dev">dev</option>
+            <option value="explicit">explicit</option>
+            <option value="fashion">fashion</option>
+            <option value="food">food</option>
+            <option value="history">history</option>
+            <option value="money">money</option>
+            <option value="movie">movie</option>
+            <option value="music">music</option>
+            <option value="political">political</option>
+            <option value="religion">religion</option>
+            <option value="science">science</option>
+            <option value="sport">sport</option>
+            <option value="travel">travel</option>
+        </select>
+        <br><br>
+        <input value="Submit" class="submit_button">
+    </form>
+
+    <script src="./index.js"></script>
+</body>
+</html>
