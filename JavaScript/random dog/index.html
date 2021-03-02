@@ -38,6 +38,16 @@
             margin: 5px;
             text-align: center;
         }
+
+        img {
+            height: 100px;
+            width: auto;
+        }
+
+        select{ 
+            font-size: 20px;
+            font-weight: 700;
+        }
     </style>
     <title>Random Dog</title>
 </head>
@@ -45,6 +55,20 @@
     <h1>Random Dog</h1>
     <img src="" alt="Click on the button down below...">
     <button>Get me a new one ...</button>
+
+
+    <h1>I want x random images</h1>
+    <div class="gallery"></div>
+    <input type="number">
+    <button class="submit">Submit</button>
+
+    <h1>Select some breed down below and click on the button</h1>
+    <form>
+        <select name="breed" id="breed">
+            
+        </select>
+        <input value="Submit" class="btn">
+    </form>
 
     <script src="./index.js"></script>
 </body>
