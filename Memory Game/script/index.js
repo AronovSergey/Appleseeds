@@ -2,9 +2,13 @@ const board = document.querySelector('.game-section');
 const cardsArray = document.querySelectorAll('.card');
 const score = document.querySelector('.score');
 const flips = document.querySelector('.flips');
+const playAgain = document.querySelector('.play-again');
+const playAgainButton = document.querySelector('.play-again__button');
+const newGameButton = document.querySelector('.new-game');
 
-const cardsValueArray = shuffle(['castle', 'castle', 'dog', 'dog', 'dragon', 'dragon', 'pony', 'pony', 'prince', 'prince', 'star', 'star']);
+let cardsValueArray = shuffle(['castle', 'castle', 'dog', 'dog', 'dragon', 'dragon', 'pony', 'pony', 'prince', 'prince', 'star', 'star']);
 
+let numberCorrectGuesses = 0;
 
 const chosenCards = {
     isTwoOpened: true,
@@ -54,6 +58,14 @@ cardsValueArray.forEach((value, index) => {
     cardsArray[index].addEventListener('click', cardClickHandler);
 })
 
+playAgainButton.addEventListener('click', () => {
+    location.reload();
+});
+
+newGameButton.addEventListener('click', () => {
+    location.reload();
+});
+
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -91,6 +103,10 @@ function minusTwo () {
 function plusTeen () {
     score.textContent = parseInt(score.textContent) + 10;
     flips.textContent = parseInt(flips.textContent) + 1;
+    numberCorrectGuesses += 2;
+    if(numberCorrectGuesses === 12){
+        display(playAgain);
+    }
 }
 function cardClickHandler() {
     const index = this.getAttribute('index');

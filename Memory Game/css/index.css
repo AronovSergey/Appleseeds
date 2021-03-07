@@ -39,6 +39,14 @@ body {
     margin: 5px;
 }
 
+.score-section .new-game {
+    font-size: 20px;
+}
+
+.score-section div {
+    margin: 20px 0;
+}
+
 /* Game Section */
 .game-section {
     margin: 20px 5vw 20px 10px;
@@ -69,7 +77,25 @@ body {
     font-weight: 600;
 }
 
+/* Play Again Section */
+.play-again {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    height: 40%;
+    width: 80%;
+    background: rgba(200, 200, 200, 0.8);
+    border-radius: 8px;
+    text-align: center;
+}
 
+.play-again h1 {
+    font-size: 50px;
+}
+
+.play-again button {
+    font-size: 30px;
+}
 
 /* Smartphones */
 @media only screen and (max-width: 770px)  {
