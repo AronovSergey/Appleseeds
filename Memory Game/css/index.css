@@ -1,0 +1,131 @@
+/* Utilities */
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: "Minecraft Font";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 15px;
+    background: #eee;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.display-none {
+    display: none;
+}
+
+/* Flex */
+.flex {
+    display: flex;
+}
+
+/* Score Section */
+.score-section {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px 20px 5vw;
+    width: calc(20vw - 20px);
+    font-size: 24px;
+    text-align: center;
+}
+
+.score-section span {
+    margin: 5px;
+}
+
+/* Game Section */
+.game-section {
+    margin: 20px 5vw 20px 10px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 140px);
+    justify-content: space-around;
+    align-content: center;
+    width: 70vw;
+}
+
+.card {
+    height: 160px;
+    width: 120px;
+    background: #777;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.card img { 
+    margin: 10px;
+}
+
+.card span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+
+/* Smartphones */
+@media only screen and (max-width: 770px)  {
+    .flex {
+        flex-direction: column;
+    }
+    .game-section {
+        grid-template-columns: repeat(3, 100px);
+        width: calc(100vw - 10px);
+        margin: 5px;
+        padding: 5px;
+        order: 1;
+    }
+    .score-section {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-around;
+        margin: 5px 10px 20px 5vw;
+        width: calc(100vw - 10px);
+        margin: 5px;
+        padding: 5px;
+        order: 2;
+    }
+    .card {
+        height: 140px;
+        width: 110px;
+    }
+    .card img { 
+        margin: 5px;
+    }
+    .card span {
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
+/* Tablet */
+@media(min-width: 771px) and (max-width: 880px) {
+    .game-section {
+        grid-template-columns: repeat(3, 140px);
+        width: 60vw;
+    }
+    .score-section {
+        margin: 20px 10px 20px 5vw;
+        width: calc(30vw - 20px);
+    }
+    .card {
+        height: 140px;
+        width: 110px;
+    }
+    .card img { 
+        margin: 5px;
+    }
+    .card span {
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+}
