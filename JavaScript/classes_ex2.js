@@ -1,0 +1,19 @@
+class Car {
+    constructor(_brand, _speed){
+        this.brand = _brand;
+        this.speed = _speed;
+    }
+
+    getBrand() { return this.brand; }
+    getSpeed() { return this.speed; }
+    setSpeed(_speed) { this.speed = _speed; }
+    print() {
+        console.log(`${this.brand} speed is ${this.speed}`);
+    }
+}
+
+const carArr = [new Car('Toyota', 200), new Car('Volkswagen', 210), new Car('Ford', 290), new Car('Honda', 160)];
+const maxSpeed = carArr.map(car => car.getSpeed()).reduce((max, speed) => max > speed ? max : speed, 0);
+console.log(maxSpeed);
+carArr.sort((a, b) => a.getSpeed() - b.getSpeed());
+console.log(carArr);
