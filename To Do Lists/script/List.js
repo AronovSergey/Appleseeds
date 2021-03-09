@@ -59,6 +59,10 @@ class List {
     }
 
     getAll() { return this.list; }
+
+    removeAll() { this.list = []; }
+
+    getListLength() { return this.list.length; }
 }
 
 const list = new List();
