@@ -1,5 +1,6 @@
 /*
     ~ list is a List instance created in List.js
+    ~ updateLocalStorge is a function created at localStorge.js
 */
 const newItemInput = document.querySelector('.new-item-section').firstElementChild;
 const newItemButton = document.querySelector('.new-item-section').lastElementChild;
@@ -12,7 +13,12 @@ const totalTasks = document.querySelector('.footer_total__tasks');
 const clearAll = document.querySelector('.footer__clear_all');
 
 
-let selectedId = -1;
+/*--------------------------------
+~~~~~~~Local Storge Section~~~~~~~ 
+--------------------------------*/
+fillTheListWithLocalStorge();
+updateList();
+
 /*--------------------------------
 ~~~~~~~Add New Item Section~~~~~~~ 
 --------------------------------*/
@@ -26,13 +32,15 @@ newItemButton.addEventListener('click', () => {
 ~~~~~~~List Section~~~~~~~ 
 ------------------------*/
 function updateList() {
+    updateLocalStorge();
+
     ol.innerHTML = "";
 
     const listData = list.getAll();
 
-    listData.forEach((item, index) => {
+    listData.forEach(item => {
         ol.innerHTML += `
-        <li id="${item.getId()}">
+        <li ${list.getCompleted(item.getId())? 'class="line-through"':''} id="${item.getId()}">
             ${item.getContent()}
             <span><i class="fas fa-check"></i></span>
             <span><i class="fas fa-edit"></i></span>
@@ -54,9 +62,9 @@ function addEventsToButtons(){
         let buttons = listItemsArray[i].children;
 
         // Cheack Button 
-        buttons[0].addEventListener('click', (function(li) {
-            return function () { checkEvent(li) };
-       })(listItemsArray[i]));
+        buttons[0].addEventListener('click', (function(li, id) {
+            return function () { checkEvent(li, id) };
+       })(listItemsArray[i], id));
        
        // Updata Button
        buttons[1].addEventListener('click', (function(id) {
@@ -70,8 +78,10 @@ function addEventsToButtons(){
     }
 }
 
-function checkEvent(li){
-    li.classList.toggle('line-through');
+function checkEvent(li, id){
+    list.changeCompleted(id);
+    updateList();
+    console.log(list.getAll());
 }
 
 function updateEvent(id){
@@ -81,7 +91,7 @@ function updateEvent(id){
 
 function removeEvent(id){
     list.delete(id);
-    updateList(id);
+    updateList();
 }
 
 /*-----------------------------
@@ -95,6 +105,7 @@ clearAll.addEventListener('click', () => {
 /*--------------------------
 ~~~~~~~Update Section~~~~~~~ 
 --------------------------*/
+let selectedId = -1;
 updateSectionButton.addEventListener('click', () =>{
     list.update(selectedId, updateSectionInput.value);
     updateSection.classList.add('display-none');
