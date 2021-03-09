@@ -1,0 +1,34 @@
+/* Utilities */
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: "Minecraft Font";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* New item section */
+.new-item-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-item-section__input {
+    margin: 15px 0 15px 15px;
+    padding: 10px;
+    font-size: 25px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.new-item-section__button {
+    margin: 15px 15px 15px 0;
+    padding: 10px;
+    font-size: 25px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: none;
+}
